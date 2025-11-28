@@ -59,6 +59,7 @@ size = Vector2(13, 7)
 
 [node name="Cow" type="CharacterBody2D"]
 position = Vector2(0, -13)
+collision_layer = 64
 script = ExtResource("1_j7g5r")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -73,8 +74,8 @@ shape = SubResource("RectangleShape2D_ilrem")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 navigation_layers = 2
+path_postprocessing = 1
 avoidance_enabled = true
-debug_enabled = true
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_node_state")]
 script = ExtResource("2_sa3qd")
