@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://dhyl2reeup62l"]
+[gd_scene load_steps=14 format=4 uid="uid://dhyl2reeup62l"]
 
 [ext_resource type="PackedScene" uid="uid://c0hw5u0diwmrw" path="res://scenes/components/day_night_cycle_component.tscn" id="1_mapoa"]
 [ext_resource type="TileSet" uid="uid://dauo32nsngt4g" path="res://Tilesets/game_tile_set.tres" id="2_ff0kp"]
@@ -8,8 +8,18 @@
 [ext_resource type="Script" uid="uid://bdtm4n1pk43kx" path="res://scenes/components/field_cursor_component.gd" id="4_ff0kp"]
 [ext_resource type="PackedScene" uid="uid://d8v6h8pyfv12" path="res://scenes/components/crops_cursor_component.tscn" id="5_aolun"]
 [ext_resource type="Script" uid="uid://dr5cst6bpvjgv" path="res://scenes/components/crops_cursor_component.gd" id="6_bb1mf"]
+[ext_resource type="PackedScene" uid="uid://dwssalxpyuwxo" path="res://scenes/components/save_data_component.tscn" id="6_dxoer"]
+[ext_resource type="Resource" uid="uid://d3xifjkunqi4t" path="res://resources/tilemap_layer_data_resource.tres" id="7_t4lsr"]
+[ext_resource type="PackedScene" uid="uid://bcn388nwt51yx" path="res://scenes/components/save_level_data_component.tscn" id="9_w2jyg"]
+[ext_resource type="Script" uid="uid://ck3vfv4wie2m6" path="res://scenes/components/save_level_data_component.gd" id="10_nk4dp"]
+[ext_resource type="PackedScene" uid="uid://dw8ctw5tmjvvr" path="res://scenes/components/test_scene_save_data_manager_component.tscn" id="11_nk4dp"]
 
 [node name="TestSceneCropsFieldsTilledDirt" type="Node2D"]
+
+[node name="SaveLevelDataComponent" parent="." instance=ExtResource("9_w2jyg")]
+script = ExtResource("10_nk4dp")
+
+[node name="TestSceneSaveDataManagerComponent" parent="." instance=ExtResource("11_nk4dp")]
 
 [node name="DayNightCycleComponent" parent="." instance=ExtResource("1_mapoa")]
 visible = false
@@ -26,6 +36,9 @@ tile_set = ExtResource("2_ff0kp")
 
 [node name="TilledSoil" type="TileMapLayer" parent="GameTileMap"]
 tile_set = ExtResource("2_ff0kp")
+
+[node name="SaveDataComponent" parent="GameTileMap/TilledSoil" instance=ExtResource("6_dxoer")]
+save_data_resource = ExtResource("7_t4lsr")
 
 [node name="CropFields" type="Node2D" parent="."]
 
