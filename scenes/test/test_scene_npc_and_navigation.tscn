@@ -74,7 +74,7 @@ position = Vector2(287, 168)
 
 [node name="Cows" type="Node2D" parent="."]
 
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="Cows"]
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="Cows" groups=["navigation_polygon_source_geometry_group"]]
 navigation_polygon = SubResource("NavigationPolygon_31arr")
 navigation_layers = 2
 

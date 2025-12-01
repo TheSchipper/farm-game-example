@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=4 uid="uid://dhyl2reeup62l"]
+[gd_scene load_steps=15 format=4 uid="uid://dhyl2reeup62l"]
 
 [ext_resource type="PackedScene" uid="uid://c0hw5u0diwmrw" path="res://scenes/components/day_night_cycle_component.tscn" id="1_mapoa"]
 [ext_resource type="TileSet" uid="uid://dauo32nsngt4g" path="res://Tilesets/game_tile_set.tres" id="2_ff0kp"]
 [ext_resource type="PackedScene" uid="uid://bd4y61jk2hllq" path="res://scenes/characters/player/player.tscn" id="3_aolun"]
 [ext_resource type="PackedScene" uid="uid://cbojia7x5h5h3" path="res://scenes/components/field_cursor_component.tscn" id="3_mapoa"]
+[ext_resource type="PackedScene" uid="uid://csjoumq6fp674" path="res://scenes/components/test_scene_enable_tool_buttons_component.tscn" id="3_t4lsr"]
 [ext_resource type="PackedScene" uid="uid://c316ncfcy3xvv" path="res://scenes/ui/game_screen.tscn" id="4_bb1mf"]
 [ext_resource type="Script" uid="uid://bdtm4n1pk43kx" path="res://scenes/components/field_cursor_component.gd" id="4_ff0kp"]
 [ext_resource type="PackedScene" uid="uid://d8v6h8pyfv12" path="res://scenes/components/crops_cursor_component.tscn" id="5_aolun"]
@@ -15,6 +16,8 @@
 [ext_resource type="PackedScene" uid="uid://dw8ctw5tmjvvr" path="res://scenes/components/test_scene_save_data_manager_component.tscn" id="11_nk4dp"]
 
 [node name="TestSceneCropsFieldsTilledDirt" type="Node2D"]
+
+[node name="TestSceneEnableToolButtonsComponent" parent="." instance=ExtResource("3_t4lsr")]
 
 [node name="SaveLevelDataComponent" parent="." instance=ExtResource("9_w2jyg")]
 script = ExtResource("10_nk4dp")
