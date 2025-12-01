@@ -1,8 +1,11 @@
-[gd_scene load_steps=15 format=4 uid="uid://bc8471bifrk2c"]
+[gd_scene load_steps=18 format=4 uid="uid://bc8471bifrk2c"]
 
+[ext_resource type="PackedScene" uid="uid://bcn388nwt51yx" path="res://scenes/components/save_level_data_component.tscn" id="1_dnkej"]
 [ext_resource type="TileSet" uid="uid://dauo32nsngt4g" path="res://Tilesets/game_tile_set.tres" id="1_ksju7"]
 [ext_resource type="PackedScene" uid="uid://b4ujexhwkac4j" path="res://scenes/houses/medium_house.tscn" id="2_6iamk"]
 [ext_resource type="PackedScene" uid="uid://brdmjd1oclkjs" path="res://scenes/characters/chicken/chicken.tscn" id="3_nsrm0"]
+[ext_resource type="PackedScene" uid="uid://dwssalxpyuwxo" path="res://scenes/components/save_data_component.tscn" id="3_wtwp4"]
+[ext_resource type="Resource" uid="uid://d3xifjkunqi4t" path="res://resources/tilemap_layer_data_resource.tres" id="4_iwr0g"]
 [ext_resource type="PackedScene" uid="uid://c1qmghdkn5ahg" path="res://scenes/characters/cow/cow.tscn" id="4_x42e6"]
 [ext_resource type="PackedScene" uid="uid://ctchrmvt3b850" path="res://scenes/characters/guide/guide.tscn" id="5_6761a"]
 [ext_resource type="PackedScene" uid="uid://cbojia7x5h5h3" path="res://scenes/components/field_cursor_component.tscn" id="6_dga24"]
@@ -28,6 +31,8 @@ source_geometry_mode = 2
 [node name="Level1" type="Node2D"]
 y_sort_enabled = true
 
+[node name="SaveLevelDataComponent" parent="." instance=ExtResource("1_dnkej")]
+
 [node name="GameTileMap" type="Node2D" parent="."]
 y_sort_enabled = true
 
@@ -41,6 +46,9 @@ tile_set = ExtResource("1_ksju7")
 
 [node name="TilledSoil" type="TileMapLayer" parent="GameTileMap"]
 tile_set = ExtResource("1_ksju7")
+
+[node name="SaveDataComponent" parent="GameTileMap/TilledSoil" instance=ExtResource("3_wtwp4")]
+save_data_resource = ExtResource("4_iwr0g")
 
 [node name="Undergrowth" type="TileMapLayer" parent="GameTileMap"]
 tile_map_data = PackedByteArray("AAALAB0AAwAGAAEAAAAUABwAAwAGAAEAAAAdABoAAwAGAAEAAAAeABoAAwAGAAEAAAAmABUAAwAGAAEAAAAyABgAAwAGAAIAAAA2ABEAAwAGAAEAAAA0AAsAAwAGAAEAAAAtAAgAAwAGAAEAAAAsAAgAAwAGAAEAAAAeAAgAAwAGAAEAAAAUAAYAAwAGAAEAAAATAAYAAwAGAAEAAAAHAAYAAwAGAAEAAAAMAAwAAwAGAAEAAAAIABEAAwAGAAEAAAAIABIAAwAGAAEAAAAKABYAAwAGAAEAAAAUABAAAwAGAAEAAAAZABYAAwAGAAEAAAAiABAAAwAGAAEAAAAtABEAAwAGAAEAAAA7ABIAAwAGAAEAAAA8AA8AAwAGAAEAAAAwABwAAwAGAAIAAAAzABsAAwAGAAIAAAA2ABoAAwAGAAIAAAA2ABkAAwAGAAIAAAA4ABcAAwAGAAIAAAA1ABcAAwAGAAIAAAA0ABcAAwAGAAIAAAAxABgAAwAGAAIAAAAuABkAAwAGAAIAAAAtABkAAwAGAAIAAAArABkAAwAGAAIAAAArABgAAwAGAAIAAAAwABcAAwAGAAIAAAAxABcAAwAGAAIAAAA1ABUAAwAGAAIAAAA2ABUAAwAGAAIAAAA4ABUAAwAGAAIAAAAdAB8AAwAIAAQAAAAgAB8AAwAIAAQAAAAmABsAAwAIAAQAAAAqAB4AAwAIAAQAAAA0AB8AAwAIAAQAAAA8ABkAAwAIAAQAAAA8AAkAAwAIAAQAAAASACIAAwAHAAQAAAAGABkAAwAHAAQAAAAGAA0AAwAHAAQAAAAHAAsAAwAHAAQAAAAkAB4AAwAIAAEAAAA0AB4AAwAIAAEAAAA9ABgAAwAIAAEAAAA9AAoAAwAIAAEAAAA2AAQAAwAIAAEAAAAFAAsAAwAIAAEAAAAbACMAAwAIAAEAAAASACQAAwAIAAEAAAAIACMAAwAIAAEAAAA=")
